@@ -3,6 +3,12 @@ module.exports = {
     browser: true,
     es2021: true
   },
+  globals: {
+    defineEmits: 'readonly',
+    defineProps: 'readonly',
+    defineExpose: 'readonly',
+    withDefaults: 'readonly'
+  },
   extends: ['plugin:vue/vue3-strongly-recommended', 'standard'],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -10,5 +16,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['vue', '@typescript-eslint'],
-  rules: {}
+  rules: {
+    'vue/multi-word-component-names': 'off'
+  }
 }
