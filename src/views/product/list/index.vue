@@ -1,10 +1,11 @@
 <template>
   <div>
-    首页
+    商品列表
   </div>
 </template>
 
 <script setup lang='ts'>
+
 </script>
 
 <style lang='scss' scoped>

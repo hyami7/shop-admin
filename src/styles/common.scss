@@ -1,0 +1,22 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-box {
+  display: flex;
+}
+
+.link-text {
+  cursor: pointer;
+}
+
+.middle-icon {
+  vertical-align: middle;
+}
