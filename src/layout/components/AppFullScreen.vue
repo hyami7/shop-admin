@@ -1,23 +1,12 @@
 <template>
-  <el-icon class="link-text full-screen" @click="toggleFullScreen">
+  <el-icon class="link-text head-icon" @click="toggle">
     <FullScreen />
   </el-icon>
 </template>
 
 <script setup lang="ts">
-const toggleFullScreen = () => {
-  if (!document.fullscreenElement) {
-    document.documentElement.requestFullscreen();
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    }
-  }
-};
+import { useFullscreen } from "@vueuse/core";
+const { toggle } = useFullscreen();
 </script>
 
-<style lang="scss" scoped>
-.full-screen {
-  margin-right: 20px;
-}
-</style>
+<style lang="scss" scoped></style>

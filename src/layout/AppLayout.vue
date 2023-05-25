@@ -3,6 +3,7 @@ import AppMenu from "./components/AppMenu.vue";
 import AppTooggleSideBar from "./components/AppToggleSideBar.vue";
 import AppBreadcrumb from "./components/AppBreadcrumb.vue";
 import FullScreen from "./components/AppFullScreen.vue";
+import Setting from "./components/AppSetting.vue";
 import AppUserInfo from "./components/AppUserInfo.vue";
 </script>
 
@@ -18,8 +19,9 @@ import AppUserInfo from "./components/AppUserInfo.vue";
             <app-tooggle-side-bar />
             <app-breadcrumb />
           </div>
-          <div class="flex-box">
+          <div class="flex-box header-right">
             <full-screen />
+            <setting />
             <app-user-info />
           </div>
         </el-header>
@@ -43,5 +45,8 @@ import AppUserInfo from "./components/AppUserInfo.vue";
 .el-container {
   background-color: #e9eef3;
   height: 100vh;
+}
+.header-right {
+  gap: 20px;
 }
 </style>

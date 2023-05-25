@@ -27,6 +27,7 @@ module.exports = {
     quotes: "off",
     "space-before-function-paren": "off",
     "comma-dangle": "off",
+    "prefer-const": "off",
   },
   overrides: [
     {

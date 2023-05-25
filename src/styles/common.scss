@@ -1,3 +1,12 @@
+:root {
+  --content-font-color: #303133;
+  --content-font-info-color: #606266;
+  --default-button-color: #79bbff;
+  --border-color: #dcdfe6;
+  --side-bg-color: #001529;
+  --custom-color: rgb(24, 144, 255);
+}
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -19,4 +28,26 @@
 
 .middle-icon {
   vertical-align: middle;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.inset-0 {
+  inset: 0rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
