@@ -18,11 +18,12 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "nprogress": "^0.2.0",
+    "pinia": "2.0.35",
     "prettier": "^2.8.8",
     "vite-plugin-eslint": "^1.6.1",
     "vue": "^3.2.25",
     "vue-router": "^4.0.15",
-    "vuex": "^4.0.2"
+    "vuex": "4.0.2"
   },
   "devDependencies": {
     "@types/node": "^17.0.38",
@@ -48,7 +49,7 @@
     "vue-tsc": "^0.34.7"
   },
   "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": [
+    "**/*.{js,jsx,vue,ts,tsx}": [
       "prettier --write",
       "npm run lint",
       "git add"
