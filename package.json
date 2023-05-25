@@ -15,7 +15,10 @@
     "@element-plus/icons-vue": "^2.0.4",
     "axios": "^0.27.2",
     "element-plus": "^2.2.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "nprogress": "^0.2.0",
+    "prettier": "^2.8.8",
     "vite-plugin-eslint": "^1.6.1",
     "vue": "^3.2.25",
     "vue-router": "^4.0.15",
@@ -46,6 +49,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
+      "prettier --write",
       "npm run lint",
       "git add"
     ]
