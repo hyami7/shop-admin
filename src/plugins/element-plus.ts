@@ -3,8 +3,8 @@
 // import { App } from 'vue'
 
 export default {
-//   install (app: App) {
-//     // @ts-ignore
-//     app.use(ElementPlus)
-//   }
-}
+  //   install (app: App) {
+  //     // @ts-ignore
+  //     app.use(ElementPlus)
+  //   }
+};

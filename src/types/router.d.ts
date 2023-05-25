@@ -1,9 +1,9 @@
-import 'vue-router'
+import "vue-router";
 
-declare module 'vue-router' {
+declare module "vue-router" {
   // eslint-disable-next-line no-unused-vars
   interface RouteMeta {
-    title?: string,
-    requiresAuth?: boolean
+    title?: string;
+    requiresAuth?: boolean;
   }
 }

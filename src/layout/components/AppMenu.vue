@@ -27,11 +27,9 @@
   </el-menu>
 </template>
 
-<script setup lang='ts'>
+<script setup lang="ts"></script>
 
-</script>
-
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .el-menu {
   border: none;
 }

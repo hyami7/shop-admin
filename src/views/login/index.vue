@@ -6,47 +6,24 @@
       class="login-form"
       @submit.prevent="handleSubmit"
     >
-      <h1 class="login-title">
-        登录
-      </h1>
-      <el-form-item
-        prop="account"
-        :rules="rules.change"
-      >
-        <el-input
-          v-model.number="user.account"
-          type="text"
-        >
+      <h1 class="login-title">登录</h1>
+      <el-form-item prop="account" :rules="rules.change">
+        <el-input v-model.number="user.account" type="text">
           <template #prefix>
             <el-icon><User /></el-icon>
           </template>
         </el-input>
       </el-form-item>
-      <el-form-item
-        prop="pwd"
-        :rules="rules.change"
-      >
-        <el-input
-          v-model.number="user.pwd"
-          type="text"
-        >
+      <el-form-item prop="pwd" :rules="rules.change">
+        <el-input v-model.number="user.pwd" type="text">
           <template #prefix>
             <el-icon><Lock /></el-icon>
           </template>
         </el-input>
       </el-form-item>
-      <el-form-item
-        prop="imgcode"
-        :rules="rules.change"
-      >
-        <div
-          class="flex-between"
-          style="width:100%"
-        >
-          <el-input
-            v-model.number="user.imgcode"
-            type="text"
-          >
+      <el-form-item prop="imgcode" :rules="rules.change">
+        <div class="flex-between" style="width: 100%">
+          <el-input v-model.number="user.imgcode" type="text">
             <template #prefix>
               <el-icon><Key /></el-icon>
             </template>
@@ -56,7 +33,7 @@
             alt="验证码"
             :src="captchaSrc"
             @click="loadCaptcha"
-          >
+          />
         </div>
       </el-form-item>
       <el-form-item>
@@ -73,58 +50,58 @@
   </div>
 </template>
 
-<script setup lang='ts'>
-import { reactive, ref, onMounted } from 'vue'
-import { getCaptcha, login } from '@/api/common'
-import type { IElForm, IFormRule } from '@/types/element-plus'
-import { useRouter, useRoute } from 'vue-router'
-import { useStore } from '@/store'
+<script setup lang="ts">
+import { reactive, ref, onMounted } from "vue";
+import { getCaptcha, login } from "@/api/common";
+import type { IElForm, IFormRule } from "@/types/element-plus";
+import { useRouter, useRoute } from "vue-router";
+import { useStore } from "@/store";
 
 onMounted(() => {
-  loadCaptcha()
-})
+  loadCaptcha();
+});
 
-const router = useRouter()
-const route = useRoute()
-const store = useStore()
-const formRef = ref<IElForm | null>(null)
+const router = useRouter();
+const route = useRoute();
+const store = useStore();
+const formRef = ref<IElForm | null>(null);
 const rules = ref<IFormRule>({
-  change: [{ required: true, message: '请输入', trigger: 'change' }]
-})
-const captchaSrc = ref('')
-const loading = ref(false)
+  change: [{ required: true, message: "请输入", trigger: "change" }],
+});
+const captchaSrc = ref("");
+const loading = ref(false);
 const user = reactive({
-  account: 'admin',
-  pwd: '123456',
-  imgcode: ''
-})
+  account: "admin",
+  pwd: "123456",
+  imgcode: "",
+});
 
 const loadCaptcha = async () => {
-  const data = await getCaptcha()
-  captchaSrc.value = URL.createObjectURL(data)
-}
+  const data = await getCaptcha();
+  captchaSrc.value = URL.createObjectURL(data);
+};
 
 const handleSubmit = async () => {
-  const valid = await formRef.value?.validate()
+  const valid = await formRef.value?.validate();
   if (!valid) {
-    return false
+    return false;
   }
-  loading.value = true
+  loading.value = true;
   const data = await login(user).finally(() => {
-    loading.value = false
-  })
-  store.commit('setUser', { ...data.user_info, token: data.token })
-  loading.value = false
+    loading.value = false;
+  });
+  store.commit("setUser", { ...data.user_info, token: data.token });
+  loading.value = false;
 
-  let redirect = route.query.redirect || '/'
-  if (typeof redirect !== 'string') {
-    redirect = '/'
+  let redirect = route.query.redirect || "/";
+  if (typeof redirect !== "string") {
+    redirect = "/";
   }
-  router.replace(redirect)
-}
+  router.replace(redirect);
+};
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .login {
   height: 100vh;
   width: 100vw;

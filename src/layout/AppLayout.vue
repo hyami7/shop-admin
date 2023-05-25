@@ -1,9 +1,9 @@
-<script setup lang='ts'>
-import AppMenu from './components/AppMenu.vue'
-import AppTooggleSideBar from './components/AppToggleSideBar.vue'
-import AppBreadcrumb from './components/AppBreadcrumb.vue'
-import FullScreen from './components/AppFullScreen.vue'
-import AppUserInfo from './components/AppUserInfo.vue'
+<script setup lang="ts">
+import AppMenu from "./components/AppMenu.vue";
+import AppTooggleSideBar from "./components/AppToggleSideBar.vue";
+import AppBreadcrumb from "./components/AppBreadcrumb.vue";
+import FullScreen from "./components/AppFullScreen.vue";
+import AppUserInfo from "./components/AppUserInfo.vue";
 </script>
 
 <template>
@@ -31,7 +31,7 @@ import AppUserInfo from './components/AppUserInfo.vue'
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .el-header {
   background-color: #b3c0d1;
   justify-content: space-between;

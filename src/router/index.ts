@@ -1,57 +1,57 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import AppLayout from '@/layout/AppLayout.vue'
-import productRoutes from './mudules/products'
-import nprogress from 'nprogress'
-import 'nprogress/nprogress.css'
-import { store } from '@/store'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import AppLayout from "@/layout/AppLayout.vue";
+import productRoutes from "./mudules/products";
+import nprogress from "nprogress";
+import "nprogress/nprogress.css";
+import { store } from "@/store";
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/',
+    path: "/",
     component: AppLayout,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
     },
     children: [
       {
-        path: '', // 默认子路由
-        name: 'home',
-        component: () => import('../views/home/index.vue'),
+        path: "", // 默认子路由
+        name: "home",
+        component: () => import("../views/home/index.vue"),
         meta: {
-          title: '首页'
-        }
+          title: "首页",
+        },
       },
-      productRoutes
-    ]
+      productRoutes,
+    ],
   },
   {
-    path: '/login',
-    name: 'login',
-    component: () => import('../views/login/index.vue')
-  }
-]
+    path: "/login",
+    name: "login",
+    component: () => import("../views/login/index.vue"),
+  },
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
-})
+  routes,
+});
 
 router.beforeEach((to, from) => {
-  nprogress.start()
+  nprogress.start();
 
   if (to.meta.requiresAuth && !store.state.user) {
     // 此路由需要授权，请检查是否已登录
     // 如果没有，则重定向到登录页面
     return {
-      path: '/login',
+      path: "/login",
       // 保存我们所在的位置，以便以后再来
-      query: { redirect: to.fullPath }
-    }
+      query: { redirect: to.fullPath },
+    };
   }
-})
+});
 
 router.afterEach((to, from) => {
-  nprogress.done()
-})
+  nprogress.done();
+});
 
-export default router
+export default router;
