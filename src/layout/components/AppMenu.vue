@@ -4,7 +4,7 @@
     background-color="#304156"
     text-color="#fff"
     router
-    :collapse="$store.state.isCollapse"
+    :collapse="userStore.isCollapse"
   >
     <el-menu-item index="/">
       <el-icon><Monitor /></el-icon>
@@ -27,7 +27,10 @@
   </el-menu>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useUserStore } from "@/store/modules/user";
+const userStore = useUserStore();
+</script>
 
 <style lang="scss" scoped>
 .el-menu {

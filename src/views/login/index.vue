@@ -55,7 +55,7 @@ import { reactive, ref, onMounted } from "vue";
 import { getCaptcha, login } from "@/api/common";
 import type { IElForm, IFormRule } from "@/types/element-plus";
 import { useRouter, useRoute } from "vue-router";
-import { useStore } from "@/store";
+import { useUserStore } from "@/store/modules/user";
 
 onMounted(() => {
   loadCaptcha();
@@ -63,7 +63,7 @@ onMounted(() => {
 
 const router = useRouter();
 const route = useRoute();
-const store = useStore();
+const userStore = useUserStore();
 const formRef = ref<IElForm | null>(null);
 const rules = ref<IFormRule>({
   change: [{ required: true, message: "请输入", trigger: "change" }],
@@ -90,7 +90,7 @@ const handleSubmit = async () => {
   const data = await login(user).finally(() => {
     loading.value = false;
   });
-  store.commit("setUser", { ...data.user_info, token: data.token });
+  userStore.setUser({ ...data.user_info, token: data.token });
   loading.value = false;
 
   let redirect = route.query.redirect || "/";

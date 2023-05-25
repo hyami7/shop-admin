@@ -1,7 +1,7 @@
 <template>
   <el-dropdown class="user-info">
     <span class="link-text"
-      >{{ $store.state.user?.account }}
+      >{{ userStore.user?.account }}
       <el-icon class="middle-icon"><ArrowDown /></el-icon
     ></span>
     <template #dropdown>
@@ -17,16 +17,16 @@
 import { ElMessage, ElMessageBox } from "element-plus";
 import { logout } from "@/api/common";
 import { useRouter } from "vue-router";
-import { useStore } from "@/store";
+import { useUserStore } from "@/store/modules/user";
 
 const router = useRouter();
-const store = useStore();
+const userStore = useUserStore();
 const handleLogout = () => {
   ElMessageBox.confirm("确认退出吗？", {})
     .then(async () => {
       await logout();
       ElMessage.success("退出成功！");
-      store.commit("setUser", null);
+      userStore.setUser(null);
       router.push({ name: "login" });
     })
     .catch(() => {});

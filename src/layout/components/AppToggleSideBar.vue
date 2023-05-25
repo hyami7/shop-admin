@@ -6,16 +6,16 @@
 </template>
 
 <script setup lang="ts">
-import { useStore } from "@/store";
+import { useUserStore } from "@/store/modules/user";
 import { computed } from "vue";
-const store = useStore();
+const userStore = useUserStore();
 
 const collapseIcon = computed(() => {
-  return !store.state.isCollapse;
+  return !userStore.isCollapse;
 });
 
 const handleCollapse = () => {
-  store.commit("setIsCollapse", !store.state.isCollapse);
+  userStore.setIsCollapse(!userStore.isCollapse);
 };
 </script>
 

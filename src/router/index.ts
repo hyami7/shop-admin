@@ -3,7 +3,7 @@ import AppLayout from "@/layout/AppLayout.vue";
 import productRoutes from "./mudules/products";
 import nprogress from "nprogress";
 import "nprogress/nprogress.css";
-import { store } from "@/store";
+import { useUserStore } from "@/store/modules/user";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -38,8 +38,8 @@ const router = createRouter({
 
 router.beforeEach((to, from) => {
   nprogress.start();
-
-  if (to.meta.requiresAuth && !store.state.user) {
+  const userStore = useUserStore();
+  if (to.meta.requiresAuth && !userStore.user) {
     // 此路由需要授权，请检查是否已登录
     // 如果没有，则重定向到登录页面
     return {
