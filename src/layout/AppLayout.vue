@@ -2,10 +2,11 @@
 import AppMenu from "./components/AppMenu.vue";
 import AppTooggleSideBar from "./components/AppToggleSideBar.vue";
 import AppBreadcrumb from "./components/AppBreadcrumb.vue";
-import FullScreen from "./components/AppFullScreen.vue";
-import LockScreen from "./components/AppLockScreen.vue";
-import Setting from "./components/AppSetting.vue";
-import AppUserInfo from "./components/AppUserInfo.vue";
+import FullScreen from "./components/header/AppFullScreen.vue";
+import LockScreen from "./components/header/AppLockScreen.vue";
+import Setting from "./components/header/AppSetting.vue";
+import LockScreenModal from "./components/header/lockScreen.vue";
+import AppUserInfo from "./components/header/AppUserInfo.vue";
 </script>
 
 <template>
@@ -38,6 +39,7 @@ import AppUserInfo from "./components/AppUserInfo.vue";
         </el-main>
       </el-container>
     </el-container>
+    <lock-screen-modal></lock-screen-modal>
   </div>
 </template>
 

@@ -59,7 +59,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { themeStyle, themeColors, layouts } from "./header/theme-contant.js";
+import { themeStyle, themeColors, layouts } from "./theme-contant.js";
 let showDrawer = ref(false);
 const defaultColor =
   document.documentElement.style.getPropertyValue("--custom-color");

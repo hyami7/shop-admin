@@ -1,7 +1,4 @@
 <template>
-  <el-icon class="link-text head-icon" @click="useLock.setLock(true)">
-    <Lock />
-  </el-icon>
   <div v-if="useLock.islock" class="lockscreen" @contextmenu.prevent>
     <div class="local-time">
       <div class="time">{{ hour }}:{{ minute }}:{{ second }}</div>
@@ -21,13 +18,14 @@
           autofocus
           placeholder="请输入登录密码"
           size="large"
-          @search="onLogin"
         >
         </el-input>
         <el-button
+          type="primary"
           style="height: 42px"
-          color="#626aef"
-          icon="search"
+          icon="ArrowRightBold"
+          @click="onLogin"
+          @keyup.enter="onLogin"
         ></el-button>
       </div>
       <a class="logout" @click="useLock.setLock(false)">重新登录</a>
@@ -108,7 +106,7 @@ onUnmounted(() => {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 999;
   display: flex;
   overflow: hidden;
   color: white;
@@ -137,14 +135,14 @@ onUnmounted(() => {
     .login {
       display: flex;
 
-      .el-input__wrapper {
-        border-radius: 4px 0 0 4px !important;
-      }
-
       .el-button {
         border-radius: 0 4px 4px 0 !important;
       }
     }
+  }
+
+  :deep(.el-input__wrapper) {
+    border-radius: 4px 0 0 4px !important;
   }
 
   .logout {
