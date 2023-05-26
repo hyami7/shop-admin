@@ -3,6 +3,7 @@ import AppMenu from "./components/AppMenu.vue";
 import AppTooggleSideBar from "./components/AppToggleSideBar.vue";
 import AppBreadcrumb from "./components/AppBreadcrumb.vue";
 import FullScreen from "./components/AppFullScreen.vue";
+import LockScreen from "./components/AppLockScreen.vue";
 import Setting from "./components/AppSetting.vue";
 import AppUserInfo from "./components/AppUserInfo.vue";
 </script>
@@ -20,8 +21,15 @@ import AppUserInfo from "./components/AppUserInfo.vue";
             <app-breadcrumb />
           </div>
           <div class="flex-box header-right">
-            <full-screen />
-            <setting />
+            <el-tooltip effect="dark" content="锁屏" placement="bottom">
+              <div><lock-screen /></div>
+            </el-tooltip>
+            <el-tooltip effect="dark" content="全屏" placement="bottom">
+              <div><full-screen /></div>
+            </el-tooltip>
+            <el-tooltip effect="dark" content="主题" placement="bottom">
+              <div><setting /></div>
+            </el-tooltip>
             <app-user-info />
           </div>
         </el-header>

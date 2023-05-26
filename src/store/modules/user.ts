@@ -1,10 +1,12 @@
 import { defineStore } from "pinia";
 // import type { RouteRecordRaw } from "vue-router";
 import { store } from "@/store";
-
 import { IUserInfo } from "@/api/types/common";
 import { setItem, getItem } from "@/utils/storage";
 import { USER } from "@/utils/constants";
+import { ElMessage, ElMessageBox } from "element-plus";
+import { logout } from "@/api/common";
+import { useRouter } from "vue-router";
 
 const state = {
   isCollapse: false,
@@ -27,6 +29,17 @@ export const useUserStore = defineStore({
     setUser(payload: IUser) {
       this.user = payload;
       setItem(USER, this.user);
+    },
+    logout() {
+      ElMessageBox.confirm("确认退出吗？", {})
+        .then(async () => {
+          await logout();
+          ElMessage.success("退出成功！");
+          this.setUser(null);
+          const router = useRouter();
+          router.push({ name: "login" });
+        })
+        .catch(() => {});
     },
   },
 });
