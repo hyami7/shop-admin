@@ -50,7 +50,7 @@ import AppUserInfo from "./components/header/AppUserInfo.vue";
 }
 .el-aside {
   width: auto;
-  background-color: #304156;
+  background-color: var(--side-bg-color);
 }
 .el-container {
   background-color: #e9eef3;

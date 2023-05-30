@@ -1,9 +1,11 @@
 <template>
   <el-dropdown class="user-info">
-    <span class="link-text"
-      >{{ userStore.user?.account }}
-      <el-icon class="middle-icon"><ArrowDown /></el-icon
-    ></span>
+    <span class="link-text">
+      {{ userStore.user?.account }}
+      <el-icon class="middle-icon">
+        <ArrowDown />
+      </el-icon>
+    </span>
     <template #dropdown>
       <el-dropdown-menu>
         <el-dropdown-item>个人中心</el-dropdown-item>

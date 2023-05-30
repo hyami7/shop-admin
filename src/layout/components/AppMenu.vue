@@ -1,10 +1,11 @@
 <template>
   <el-menu
-    active-text-color="#f15922"
-    background-color="#304156"
-    text-color="#fff"
+    active-text-color="var(--side-active-font-color)"
+    background-color="var(--side-bg-color)"
+    text-color="var(--side-font-color)"
     router
     :collapse="userStore.isCollapse"
+    popper-effect
   >
     <el-menu-item index="/">
       <el-icon><Monitor /></el-icon>

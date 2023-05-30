@@ -2,7 +2,7 @@
   <div v-if="useLock.islock" class="lockscreen" @contextmenu.prevent>
     <div class="local-time">
       <div class="time">{{ hour }}:{{ minute }}:{{ second }}</div>
-      <div class="date">{{ month }}月{{ day }}号，星期{{ week }}</div>
+      <div class="date">{{ month }}月{{ day }}号 星期{{ week }}</div>
     </div>
     <div class="login-box">
       <el-avatar
@@ -34,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, toRefs, onMounted, onUnmounted } from "vue";
+import { reactive, onMounted, onUnmounted } from "vue";
 import { useLocalTime } from "@/hooks/useLocalTime";
 import { UserFilled } from "@element-plus/icons-vue";
 // import md5 from 'blueimp-md5'
@@ -45,7 +45,7 @@ import { ElMessage } from "element-plus";
 const userStore = useUserStore();
 const useLock = useLockScreen();
 // 获取本地时间
-const { month, day, hour, minute, week, second } = toRefs(useLocalTime());
+const { month, day, hour, minute, week, second } = useLocalTime();
 
 const state = reactive({
   loginLoading: false, // 正在登录
@@ -154,7 +154,7 @@ onUnmounted(() => {
   .local-time {
     position: absolute;
     bottom: 60px;
-    left: 60px;
+    right: 60px;
     font-family: helvetica;
 
     .time {

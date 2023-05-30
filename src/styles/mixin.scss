@@ -1,3 +1,12 @@
 .el-form-item {
   margin-bottom: 20px;
 }
+
+.el-menu-item.is-active {
+  color: #ffffff !important;
+  background-color: var(--custom-color) !important;
+}
+
+.el-menu-item:hover {
+  background-color: var(--custom-hover-color) !important ;
+}
