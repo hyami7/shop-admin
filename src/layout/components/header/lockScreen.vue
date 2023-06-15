@@ -110,7 +110,7 @@ onUnmounted(() => {
   display: flex;
   overflow: hidden;
   color: white;
-  //   background-color: #000;
+  // background-color: #000;
   backdrop-filter: blur(7px);
   background-color: rgba(25, 28, 34, 0.78);
 

@@ -5,6 +5,7 @@ import AppBreadcrumb from "./components/AppBreadcrumb.vue";
 import FullScreen from "./components/header/AppFullScreen.vue";
 import LockScreen from "./components/header/AppLockScreen.vue";
 import Setting from "./components/header/AppSetting.vue";
+import Search from "./components/header/AppSearch.vue";
 import LockScreenModal from "./components/header/lockScreen.vue";
 import AppUserInfo from "./components/header/AppUserInfo.vue";
 </script>
@@ -22,6 +23,7 @@ import AppUserInfo from "./components/header/AppUserInfo.vue";
             <app-breadcrumb />
           </div>
           <div class="flex-box header-right">
+            <search />
             <el-tooltip effect="dark" content="锁屏" placement="bottom">
               <div><lock-screen /></div>
             </el-tooltip>

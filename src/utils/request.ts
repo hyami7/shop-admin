@@ -11,6 +11,8 @@ const request = axios.create({
 request.interceptors.request.use(
   function (config) {
     const user = store.state.user;
+    console.log(user);
+
     if (user && user.token) {
       config.headers && (config.headers.Authorization = `Bearer ${user.token}`);
     }

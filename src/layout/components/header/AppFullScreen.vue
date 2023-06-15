@@ -5,8 +5,13 @@
 </template>
 
 <script setup lang="ts">
+import { defineProps } from "vue";
 import { useFullscreen } from "@vueuse/core";
-const { toggle } = useFullscreen();
+
+const props = defineProps({
+  target: HTMLElement,
+});
+const { toggle } = props.target ? useFullscreen(props.target) : useFullscreen();
 </script>
 
 <style lang="scss" scoped></style>
