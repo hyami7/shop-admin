@@ -23,7 +23,7 @@
       </el-form-item>
       <el-form-item prop="imgcode" :rules="rules.change">
         <div class="flex-between" style="width: 100%">
-          <el-input v-model.number="user.imgcode" type="text">
+          <el-input v-model.trim="user.imgcode" type="text">
             <template #prefix>
               <el-icon><Key /></el-icon>
             </template>
