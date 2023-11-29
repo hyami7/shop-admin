@@ -25,6 +25,7 @@ module.exports = {
     "vue/multi-word-component-names": "off",
     semi: "off",
     quotes: "off",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
     "space-before-function-paren": "off",
     "comma-dangle": "off",
     "prefer-const": "off",
