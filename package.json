@@ -13,7 +13,7 @@
     "@element-plus/icons-vue": "^2.0.4",
     "@vueuse/core": "^10.1.2",
     "axios": "^0.27.2",
-    "element-plus": "^2.3.5",
+    "element-plus": "^2.4.3",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "fabric": "4.6.0",
@@ -21,7 +21,7 @@
     "pinia": "2.0.35",
     "prettier": "^2.8.8",
     "vite-plugin-eslint": "^1.6.1",
-    "vue": "^3.2.25",
+    "vue": "3.3.4",
     "vue-router": "^4.0.15",
     "vuex": "4.0.2"
   },

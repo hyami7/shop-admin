@@ -2,6 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import { setupStore } from "@/store";
+import ElementPlus from "element-plus";
+import zhCn from "element-plus/dist/locale/zh-cn.mjs";
 // import ElementPlus from './plugins/element-plus'
 
 // 加载全局样式
@@ -17,6 +19,7 @@ const app = createApp(App);
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);
 }
+app.use(ElementPlus, { zIndex: 3000, locale: zhCn });
 
 // 挂载vuex状态管理
 setupStore(app);

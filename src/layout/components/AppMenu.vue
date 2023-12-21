@@ -5,7 +5,7 @@
     text-color="var(--side-font-color)"
     router
     :collapse="userStore.isCollapse"
-    popper-effect
+    popper-effect="dark"
   >
     <el-menu-item index="/">
       <el-icon><Monitor /></el-icon>
@@ -14,15 +14,15 @@
     <el-sub-menu index="/">
       <template #title>
         <el-icon><SoldOut /></el-icon>
-        <span>商品</span>
+        <span>示例</span>
       </template>
       <el-menu-item index="/product/product_list">
         <el-icon><SoldOut /></el-icon>
-        <span>商品列表</span>
+        <span>列表</span>
       </el-menu-item>
       <el-menu-item index="/product/product_attr">
         <el-icon><SoldOut /></el-icon>
-        <span>商品规格</span>
+        <span>demo</span>
       </el-menu-item>
     </el-sub-menu>
   </el-menu>

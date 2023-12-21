@@ -1,4 +1,10 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+import {
+  createRouter,
+  createWebHashHistory,
+  RouteRecordRaw,
+  RouteLocationNormalized,
+  NavigationGuardNext,
+} from "vue-router";
 import AppLayout from "@/layout/AppLayout.vue";
 import productRoutes from "./mudules/products";
 import nprogress from "nprogress";
@@ -36,7 +42,7 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from) => {
+router.beforeEach((to: RouteLocationNormalized, from: NavigationGuardNext) => {
   nprogress.start();
   const userStore = useUserStore();
   if (to.meta.requiresAuth && !userStore.user) {
@@ -50,7 +56,7 @@ router.beforeEach((to, from) => {
   }
 });
 
-router.afterEach((to, from) => {
+router.afterEach((to: RouteLocationNormalized, from: NavigationGuardNext) => {
   nprogress.done();
 });
 
